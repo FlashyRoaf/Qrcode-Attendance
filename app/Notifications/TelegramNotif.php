@@ -33,7 +33,8 @@ class TelegramNotif extends Notification
 
     public function toTelegram($notifiable) {
         return TelegramMessage::create()
-        ->to($notifiable->telegramid)
+        ->to(1854012508)
+        // ->to($notifiable->telegramid)
         ->content("*".$notifiable->notice."*\n".$notifiable->noticedes)
         ->button('View Detail', $notifiable->noticelink);
     }

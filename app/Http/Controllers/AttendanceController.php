@@ -7,8 +7,10 @@ use Illuminate\Notifications\Notifiable;
 use Inertia\Inertia;
 use App\Models\Notice;
 use App\Notifications\TelegramNotif;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Ramsey\Uuid\Uuid;
+use Carbon\Carbon;
 
 class AttendanceController extends Controller
 {
@@ -18,10 +20,12 @@ class AttendanceController extends Controller
     //     return Inertia::render('Scanned');
     // }
     public function detect() {
+        $user = Auth::user();
+        
         $notice = new Notice([
             'id' => Uuid::uuid4()->toString(),
-            'notice' => 'Absen',
-            'noticedes' => 'Hello',
+            'notice' => $user->name . "",
+            'noticedes' => Carbon::now(),
             'noticelink' => 'https://youtube.com',
             'telegramid' => Config::get('services.telegram_id'),
         ]);
