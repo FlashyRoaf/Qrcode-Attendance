@@ -41,7 +41,6 @@ class AttendanceController extends Controller
         }
         
         
-        
         $attendance = Attendance::create([
             'name' => $user->name,
             "waktu_scan" => Carbon::now(),
