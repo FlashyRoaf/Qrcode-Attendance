@@ -1,8 +1,7 @@
 <template>
-
     <Head title="Login" />
-    <main class="min-h-screen bg-white text-black">
-        
+
+    <main class="min-h-screen bg-white text-black p-2">
         <div class="border border-gray-100 w-full max-w-md mx-auto rounded-lg m-8 shadow-xl">
             <form class="flex flex-col w-full gap-3 p-8" @submit.prevent="submit">
                 <div class="flex justify-center font-extrabold text-4xl">Login</div>
