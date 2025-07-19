@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'telegram-bot-api' => [
+        'token' => env('TELEGRAM_BOT_TOKEN', '7881112367:AAHTDuv0W5YLmqFXxnEqJbjCGddZvDcyft8'),
+    ],
+
+    'telegram_id' => env('TELEGRAM_ID', '7881112367'),
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

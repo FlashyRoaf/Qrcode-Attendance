@@ -12,12 +12,16 @@ use Inertia\Inertia;
 Route::get('/', [QRCodeController::class,'index'])->name('qrcode');
 
 Route::prefix('qrcodes')->group(function () {
-    Route::post('/', [AttendanceController::class,'create'])->name('qrcodes.create');
+    Route::post('/', [QRCodeController::class,'create'])->name('qrcodes.create');
 });
 
-Route::get('/scanned', function () {
-    return Inertia::render('Scanned');
-})->name('scanned');
+Route::prefix('scanned')->group(function () {
+    Route::get('/', [AttendanceController::class,'detect'])->name('scanned');
+});
+
+// Route::get('/scanned', function () {
+//     return Inertia::render('Scanned');
+// })->name('scanned');
 
 // Route::post('', [AttendanceController::class,''])->name('attendance');
 
