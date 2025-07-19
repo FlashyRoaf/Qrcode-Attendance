@@ -13,8 +13,8 @@ class QRCodeController extends Controller
     //
     public function index() {
         $qrName = 'qr_'. date( 'd-m-y-G' ,time()) . '.svg'; 
-        // $path = public_path("qrcodes/" . $qrName);
-        // QrCode::format('svg')->size(400)->generate(route('scanned'), $path);
+        $path = public_path("qrcodes/" . $qrName);
+        QrCode::format('svg')->size(400)->generate(route('scanned'), $path);
 
         return Inertia::render('QRCodeAttendance', [
             'qrcode' => asset('qrcodes/' . $qrName),
