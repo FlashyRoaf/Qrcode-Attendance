@@ -1,5 +1,5 @@
 <template>
-    <h1>Scanned</h1>
+    <h1>Absensi Berhasil</h1>
 </template>
 
 <script setup lang="ts">
